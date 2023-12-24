@@ -37,7 +37,11 @@ def getOptions():
 def getDriver(proxy :dict = None):
     options = getOptions()
     if proxy:
-        proxy_extension = proxies(proxy.user, proxy.passw, proxy.host, proxy.port)
+        print(proxy)
+        print(proxy['user'], proxy['pass'], proxy['host'], proxy['port'])
+        proxy_extension = proxies(proxy['user'], proxy['pass'], proxy['host'], proxy['port'])
         options.add_argument(f'--load-extension={proxy_extension}')
-    driver = webdriver.Chrome(options=options, service=Service(executable_path='/usr/lib/chromium-browser/chromedriver'))
+        
+        # options.add_extension(proxy_extension)
+    driver = webdriver.Chrome(options=options)
     return driver

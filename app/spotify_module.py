@@ -30,6 +30,7 @@ class SpotifyBot:
     def login(self, driver: webdriver.Chrome, email: str = None, password: str = None):
         login_url = r'https://accounts.spotify.com/en/login?continue=https%3A%2F%2Fopen.spotify.com'
         driver.get(login_url)
+        sleep(500)
         if email and password:
             print('logging in')
             try:
@@ -145,6 +146,7 @@ class SpotifyBot:
             self.listen_to_song(driver, song)
             driver.quit()
         except:
+            traceback.print_exc()
             pass
         
             
@@ -152,6 +154,6 @@ class SpotifyBot:
         while True:
             self.account_listening()
 
-print('mmmmmm')
+print('starting')
 spotify = SpotifyBot(account_file=dir_path + sep +'accounts.txt', proxy_file= dir_path +sep +'proxies.txt', song_file=dir_path + sep + 'songs.txt')
 spotify.start_loop()
