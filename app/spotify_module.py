@@ -21,7 +21,7 @@ class SpotifyBot:
         self.get_all_accounts()
         self.get_all_proxies()
         self.get_all_songs()
-        self.display = Display(visible=0, size=(1920, 1080)).start()
+        self.display = Display(visible=1, size=(1920, 1080)).start()
         
     def __del__(self):
         self.display.stop()
