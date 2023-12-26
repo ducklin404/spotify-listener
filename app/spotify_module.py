@@ -29,8 +29,9 @@ class SpotifyBot:
     
     def login(self, driver: webdriver.Chrome, email: str = None, password: str = None):
         login_url = r'https://accounts.spotify.com/en/login?continue=https%3A%2F%2Fopen.spotify.com'
+        # login_url = 'https://open.spotify.com/track/6DyotcCWPqKQT8YWireU6L?si=ee2247d52641413f'
         driver.get(login_url)
-        sleep(500)
+        sleep(5)
         if email and password:
             print('logging in')
             try:
@@ -95,9 +96,12 @@ class SpotifyBot:
             return None
             
     def listen_to_song(self, driver: webdriver.Chrome, url: str):
-        driver.save_screenshot('aa.png')
+        driver.save_screenshot(f'{str(random.randint(1000,9999))}.png')
         if driver and url:
-            driver.get(url)
+            try:
+                driver.get(url)
+            except:
+                print('can\'t go to song url')
             print(f'listening to song {url}')
             wait = WebDriverWait(driver, 15)
             actionbar = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'div[data-testid="action-bar"]')))

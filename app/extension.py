@@ -1,5 +1,4 @@
 import os
-import zipfile
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
 sep = os.sep

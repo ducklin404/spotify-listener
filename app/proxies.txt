@@ -1,2 +1,1 @@
-fr.smartproxy.com:40002:spbeg6avl0:ge27o5SfhPQf9bAdgx
-fr.smartproxy.com:40004:spbeg6avl0:ge27o5SfhPQf9bAdgx
+host:port:user:pass
