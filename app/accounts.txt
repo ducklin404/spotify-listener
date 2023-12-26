@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 account:password
+=======
+account:password
+>>>>>>> c3e566609a5de7bf08bf5ae3cb428a487c84f07a
